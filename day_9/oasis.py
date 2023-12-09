@@ -1,3 +1,4 @@
+from itertools import pairwise, accumulate, takewhile
 input = []
 real = './day_9/input.txt'
 example = './day_9/example.txt'
@@ -13,7 +14,7 @@ def extract_data(document_input):
 
 
 def array_diference(reading):
-    return [reading[i] - reading[i - 1] for i in range(1, len(reading))]
+    return [b - a for a, b in pairwise(reading)]
 
 
 def check_zeros(array):
@@ -64,5 +65,5 @@ def get_sum_part2(document):
 
 
 
-result = get_sum_part2(real)
+result = get_sum_part1(example)
 print(result)
