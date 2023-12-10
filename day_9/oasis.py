@@ -7,10 +7,7 @@ example = './day_9/example.txt'
 def extract_data(document_input):
     with open(document_input, 'r') as f:
         lines = [line.strip() for line in f if line.strip()]
-
-    readings = [list(map(int, i.split(' '))) for i in lines]
-
-    return readings
+    return [list(map(int, i.split(' '))) for i in lines]
 
 
 def array_diference(reading):
